@@ -471,7 +471,6 @@
                                 </div>
                             </div> -->
 
-
                         </aside>
                     </div>
 
@@ -612,14 +611,15 @@
     <script>
         const title = document.querySelector('.article-title')
         const txt = document.querySelector('.text')
+        const image = document.querySelector('.image-box img')
 
         $.getJSON('http://localhost:1337/articles', function(data) {
             const article = data[0]
             txt.textContent = article.content
             title.textContent = article.title
+            image.src = `http://localhost:1337${article.image[0].url}`
         });
     </script>
-
 
 </body>
 
